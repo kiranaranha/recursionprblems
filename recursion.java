@@ -14,13 +14,6 @@ public int fibonacci(int n){
     }
 }
 
-public int countHi(String str) {
-    int count = 0;
-    for (int i = 0; i < str.length()-1; i++){}
-        if (str.substring(i, i+2).equals("hi"))
-        count += 1;
-        return count;
-}
 
 public int countHi(String str) {
     if (str.length() < 2){
@@ -33,3 +26,13 @@ public int countHi(String str) {
     }
 }
 
+public int countAbc(String str) {
+        if (str.length() < 3){
+        return 0;
+        }
+        if (str.substring(0,3).equals("abc") || str.substring(0,3).equals("aba")){
+        return 1 + countAbc(str.substring(1));
+        }else{
+        return countAbc(str.substring(1));
+        }
+        }
