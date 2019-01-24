@@ -26,13 +26,21 @@ public int countHi(String str) {
     }
 }
 
-public int countAbc(String str) {
-        if (str.length() < 3){
+public int sumDigits(int n){
+    if(n == 0){
         return 0;
-        }
-        if (str.substring(0,3).equals("abc") || str.substring(0,3).equals("aba")){
+    }
+    return n % 10 + sumDigits(n/10);
+}
+
+
+public int countAbc(String str) {
+    if (str.length() < 3){
+        return 0;
+    }
+    if (str.substring(0,3).equals("abc") || str.substring(0,3).equals("aba")){
         return 1 + countAbc(str.substring(1));
-        }else{
+    }else{
         return countAbc(str.substring(1));
-        }
-        }
+    }
+}
