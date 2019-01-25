@@ -44,3 +44,35 @@ public int countAbc(String str) {
         return countAbc(str.substring(1));
     }
 }
+
+public int countPairs(String str) {
+    if (str.equals("") || str.length() < 3){
+        return 0;
+    }
+    if (str.charAt(0) == str.charAt(2)){
+        return 1 + countPairs(str.substring(1));
+    }else{
+        return countPairs(str.substring(1));
+    }
+}
+
+public int count7(int n) {
+    if (n < 7){
+        return 0;
+    }else if ( 7 == n % 10){
+        return 1 + count7(n / 10);
+    } else {
+        return 0 + count7(n / 10);
+    }
+}
+
+public int bunnyEars2(int bunnies) {
+    if (bunnies == 0){
+        return 0;
+    }
+    if (bunnies % 2 == 0){
+        return 3 + bunnyEars2(bunnies-1);
+    } else {
+        return 2 + bunnyEars2(bunnies-1);
+    }
+}
